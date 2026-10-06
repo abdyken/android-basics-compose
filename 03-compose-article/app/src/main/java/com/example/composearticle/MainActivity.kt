@@ -16,6 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.composearticle.ui.theme.ComposeArticleTheme
 
 class MainActivity : ComponentActivity() {
@@ -35,18 +37,28 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun ComposeArticleApp(modifier: Modifier = Modifier) {
     ArticleCard(
+        title = "Jetpack Compose tutorial",
         imagePainter = painterResource(R.drawable.bg_compose_background),
         modifier = modifier
     )
 }
 
 @Composable
-fun ArticleCard(imagePainter: Painter, modifier: Modifier = Modifier) {
+fun ArticleCard(
+    title: String,
+    imagePainter: Painter,
+    modifier: Modifier = Modifier
+) {
     Column(modifier = modifier) {
         Image(
             painter = imagePainter,
             contentDescription = null,
             modifier = Modifier.fillMaxWidth()
+        )
+        Text(
+            text = title,
+            fontSize = 24.sp,
+            modifier = Modifier.padding(16.dp)
         )
     }
 }

@@ -34,25 +34,29 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun ComposeQuadrantApp(modifier: Modifier = Modifier) {
-    Column(modifier = modifier) {
-        Row {
+    Column(modifier = modifier.fillMaxSize()) {
+        Row(modifier = Modifier.weight(1f)) {
             ComposableInfoCard(
                 title = "Text composable",
-                description = "Displays text and follows the recommended Material Design guidelines."
+                description = "Displays text and follows the recommended Material Design guidelines.",
+                modifier = Modifier.weight(1f)
             )
             ComposableInfoCard(
                 title = "Image composable",
-                description = "Creates a composable that lays out and draws a given Painter class object."
+                description = "Creates a composable that lays out and draws a given Painter class object.",
+                modifier = Modifier.weight(1f)
             )
         }
-        Row {
+        Row(modifier = Modifier.weight(1f)) {
             ComposableInfoCard(
                 title = "Row composable",
-                description = "A layout composable that places its children in a horizontal sequence."
+                description = "A layout composable that places its children in a horizontal sequence.",
+                modifier = Modifier.weight(1f)
             )
             ComposableInfoCard(
                 title = "Column composable",
-                description = "A layout composable that places its children in a vertical sequence."
+                description = "A layout composable that places its children in a vertical sequence.",
+                modifier = Modifier.weight(1f)
             )
         }
     }

@@ -1,7 +1,6 @@
 package com.example.greetingcard
 
 import android.os.Bundle
-import android.view.Surface
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -38,7 +37,7 @@ class MainActivity : ComponentActivity() {
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Surface(color = Color.Cyan) {
         Text(
-            text = "Hello, my name is  $name!",
+            text = "Hello, my name is $name!",
             modifier = modifier.padding(24.dp)
         )
     }

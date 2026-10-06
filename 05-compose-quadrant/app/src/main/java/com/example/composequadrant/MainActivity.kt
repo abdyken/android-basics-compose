@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -33,11 +34,28 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun ComposeQuadrantApp(modifier: Modifier = Modifier) {
-    ComposableInfoCard(
-        title = "Text composable",
-        description = "Displays text and follows the recommended Material Design guidelines.",
-        modifier = modifier
-    )
+    Column(modifier = modifier) {
+        Row {
+            ComposableInfoCard(
+                title = "Text composable",
+                description = "Displays text and follows the recommended Material Design guidelines."
+            )
+            ComposableInfoCard(
+                title = "Image composable",
+                description = "Creates a composable that lays out and draws a given Painter class object."
+            )
+        }
+        Row {
+            ComposableInfoCard(
+                title = "Row composable",
+                description = "A layout composable that places its children in a horizontal sequence."
+            )
+            ComposableInfoCard(
+                title = "Column composable",
+                description = "A layout composable that places its children in a vertical sequence."
+            )
+        }
+    }
 }
 
 @Composable

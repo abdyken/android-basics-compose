@@ -24,6 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -47,7 +48,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BusinessCardApp(modifier: Modifier = Modifier) {
     Column(
-        modifier = modifier.fillMaxSize(),
+        modifier = modifier
+            .fillMaxSize()
+            .background(Color(0xFFD2E8D4)),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Column(
@@ -58,10 +61,14 @@ fun BusinessCardApp(modifier: Modifier = Modifier) {
             Logo()
             Text(
                 text = "Dimash Abdyken",
-                fontSize = 36.sp
+                fontSize = 36.sp,
+                fontWeight = FontWeight.Light,
+                modifier = Modifier.padding(top = 8.dp)
             )
             Text(
-                text = "Android Developer Student"
+                text = "Android Developer Student",
+                fontWeight = FontWeight.Bold,
+                color = Color(0xFF006D3B)
             )
         }
         ContactSection(modifier = Modifier.padding(bottom = 32.dp))
@@ -81,7 +88,7 @@ fun Logo(modifier: Modifier = Modifier) {
 
 @Composable
 fun ContactSection(modifier: Modifier = Modifier) {
-    Column(modifier = modifier) {
+    Column(modifier = modifier.padding(horizontal = 16.dp)) {
         ContactRow(icon = Icons.Filled.Phone, text = "+7 777 123 45 67")
         ContactRow(icon = Icons.Filled.Share, text = "@abdyken")
         ContactRow(icon = Icons.Filled.Email, text = "abdykendinmuhammed@gmail.com")
@@ -97,6 +104,7 @@ fun ContactRow(icon: ImageVector, text: String, modifier: Modifier = Modifier) {
         Icon(
             imageVector = icon,
             contentDescription = null,
+            tint = Color(0xFF006D3B),
             modifier = Modifier.padding(end = 16.dp)
         )
         Text(text = text)
